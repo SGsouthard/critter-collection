@@ -17,8 +17,8 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     price: DataTypes.INTEGER,
     flickPrice: DataTypes.INTEGER,
-    catchPhrase: DataTypes.STRING,
-    museumInfo: DataTypes.STRING,
+    catchPhrase: DataTypes.STRING(1000),
+    museumInfo: DataTypes.STRING(1000),
     image: DataTypes.STRING,
     icon: DataTypes.STRING
   }, {
