@@ -12,6 +12,11 @@ const fs = require('fs');
 const SECRET_SESSION = process.env.SECRET_SESSION;
 console.log(SECRET_SESSION);
 
+const { User } = require('./models');
+const { Bugs } = require('./models');
+const { Fish } = require('./models');
+const { Seacreatures } = require('./models');
+
 app.set('view engine', 'ejs');
 
 app.use(require('morgan')('dev'));
@@ -48,6 +53,9 @@ app.get('/profile', isLoggedIn, (req, res) => {
 
 // controllers
 app.use('/auth', require('./controllers/auth'));
+app.use('/bugs', require('./controllers/bugs'));
+app.use('/fish', require('./controllers/fish'));
+app.use('/seacreatures', require('./controllers/seacreatures'));
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {

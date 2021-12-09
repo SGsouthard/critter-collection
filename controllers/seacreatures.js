@@ -7,8 +7,8 @@ const { Bugs } = require('../models');
 const { Fish } = require('../models');
 const { Seacreatures } = require('../models');
 
-router.get("/bugs", (req, res) => {
-    res.render("bugs/bugs");
+router.get("/seacreatures", (req, res) => {
+    res.render("seacreatures/seacreatures");
 });
 
 module.exports = router;

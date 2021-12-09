@@ -3,6 +3,9 @@ const router = express.Router();
 const passport = require("../config/ppConfig");
 
 const { User } = require('../models');
+const { Bugs } = require('../models');
+const { Fish } = require('../models');
+const { Seacreatures } = require('../models');
 
 router.get("/signup", (req, res) => {
   res.render("auth/signup");
