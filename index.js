@@ -38,6 +38,34 @@ let fishData = [];
 //     }
 // });
 
+fs.readFile('fish.json', 'utf8', function (err, data) {
+    if (err) {
+        console.log('there was a problem reading the file', err)
+    } else {
+        let fishData = JSON.parse(data);
+        // console.log(fishData[1]);
+        //put loop/fish.create in here to populate the dang thing
+        for (i = 0; i < fishData.length; i++) {
+            let fish = fishData[i]
+            const obj = {
+                name: fish['file-name'],
+                isAllDay: fish['isAllDay'],
+                isAllYear: fish['isAllYear'],
+                northernMonths: fish['month-northern'],
+                southernMonths: fish['month-southern'],
+                time: fish['time']
+            }
+            Fishavailability.create(obj)
+            .then(function(newFish){
+                console.log('FISH UPLOAD', newFish.name)
+            })
+            .catch(function(error){
+                console.log('ERROR', error)
+            });
+        }
+    }
+});
+
 // fs.readFile('bugs.json', 'utf8', function (err, data) {
 //     if (err) {
 //         console.log('there was a problem reading the file', err)
