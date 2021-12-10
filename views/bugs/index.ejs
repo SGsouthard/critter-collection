@@ -8,6 +8,13 @@
 </head>
 <body>
     <h1>BUGS</h1>
-
+    <% for( let i = 0; i < Bugs.length; i++) { %> 
+        <% let bugs = Bugs[i]; %>
+        <% bugs = bugs.toJSON() %>
+        <p><%= bugs.name %></p>
+        <img src="<%= bugs.icon %>" />
+        <a href="/bugs/<%= bugs.id %>">More Details</a>
+        <hr>
+    <% } %>
 </body>
 </html>

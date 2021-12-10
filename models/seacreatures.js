@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
     catchPhrase: DataTypes.STRING(1000),
     museumInfo: DataTypes.STRING(1000),
     image: DataTypes.STRING,
-    icon: DataTypes.STRING
+    icon: DataTypes.STRING,
+    capture: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Seacreatures',

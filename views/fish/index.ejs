@@ -9,12 +9,12 @@
 <body>
     <h1>FISH</h1>
     <% for( let i = 0; i < Fish.length; i++) { %> 
-        <% let f = Fish[i]; %>
-        <% f = f.toJSON() %>
-        <p><%= f.name %></p>
-        <p><%= f.shadowSize %></p>
-        <p><%= f.price %></p>
-        <p><%= f.cjPrice %></p>
+        <% let fish = Fish[i]; %>
+        <% fish = fish.toJSON() %>
+        <p><%= fish.name %></p>
+        <img src="<%= fish.icon %>" />
+        <a href="/fish/<%= fish.id %>">More Details</a>
+        <hr>
     <% } %> 
 </body>
 </html>
