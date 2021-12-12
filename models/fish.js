@@ -18,8 +18,8 @@ module.exports = (sequelize, DataTypes) => {
     shadowSize: DataTypes.STRING,
     price: DataTypes.INTEGER,
     cjPrice: DataTypes.INTEGER,
-    catchPhrase: DataTypes.STRING(1000),
-    museumInfo: DataTypes.STRING(1000),
+    catchPhrase: DataTypes.TEXT,
+    museumInfo: DataTypes.TEXT,
     image: DataTypes.STRING,
     icon: DataTypes.STRING,
     capture: DataTypes.BOOLEAN

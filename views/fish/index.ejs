@@ -11,9 +11,9 @@
     <% for( let i = 0; i < Fish.length; i++) { %> 
         <% let fish = Fish[i]; %>
         <% fish = fish.toJSON() %>
-        <p><%= fish.name %></p>
-        <img src="<%= fish.icon %>" />
-        <a href="/fish/<%= fish.id %>">More Details</a>
+        <a href="/fish/<%= fish.id %>"><%= fish.name %></a>
+        <img src="<%= fish.icon %>"/>
+
         <hr>
     <% } %> 
 </body>

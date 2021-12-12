@@ -10,7 +10,7 @@ const { Seacreatures } = require('../models');
 router.get("/", (req, res) => {
     Seacreatures.findAll()
     .then(function (seacreaturesList) {
-        console.log('FOUND ALL SEA CREATURES', seacreaturesList);
+        console.log('FOUND ALL SEA CREATURES');
         res.render('seacreatures/index', { Seacreatures: seacreaturesList });
     })
     .catch(function (err) {

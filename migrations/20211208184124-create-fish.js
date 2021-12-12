@@ -21,16 +21,19 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       catchPhrase: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       museumInfo: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       image: {
         type: Sequelize.STRING
       },
       icon: {
         type: Sequelize.STRING
+      },
+      capture: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,

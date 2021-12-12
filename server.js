@@ -8,14 +8,12 @@ const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
 const axios = require('axios').default;
 const fs = require('fs');
+const methodOverride = require('method-override');
 
 const SECRET_SESSION = process.env.SECRET_SESSION;
 console.log(SECRET_SESSION);
 
-const { User } = require('./models');
-const { Bugs } = require('./models');
-const { Fish } = require('./models');
-const { Seacreatures } = require('./models');
+const { User, Bugs, Fish, Seacreatures } = require('./models');
 
 app.set('view engine', 'ejs');
 
@@ -30,6 +28,7 @@ app.use(session({
 }));
 
 app.use(flash());
+app.use(methodOverride('_method'));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -48,11 +47,12 @@ app.get('/', (req, res) => {
 // Add this above /auth controllers
 app.get('/profile', isLoggedIn, (req, res) => {
   const { id, name, email } = req.user.get(); 
-  res.render('profile', { id, name, email });
+  res.render('profile', { id, name, email, Fish, Bugs, Seacreatures });
 });
 
 // controllers
 app.use('/auth', require('./controllers/auth'));
+// app.use('/profile', require('./controllers/profile'));
 app.use('/bugs', require('./controllers/bugs'));
 app.use('/fish', require('./controllers/fish'));
 app.use('/seacreatures', require('./controllers/seacreatures'));

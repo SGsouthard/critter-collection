@@ -1,12 +1,7 @@
 const axios = require('axios');
 const fs = require('fs');
 const { stringify } = require('querystring');
-const {Fish} = require('./models');
-const {Fishavailability} = require('./models');
-const {Bugs} = require('./models');
-const {Bugsavailability} = require('./models');
-const {Seacreatures} = require('./models');
-const {Seacreatureavailability} = require('./models');
+const { User, Bugs, Fish, Seacreatures } = require('./models');
 let fishData = [];
 
 // fs.readFile('fish.json', 'utf8', function (err, data) {
@@ -23,10 +18,11 @@ let fishData = [];
 //                 shadowSize: fish['shadow'],
 //                 price: fish['price'],
 //                 cjPrice: fish['price-cj'],
-//                 // catchPhrase: fish['catch-phrase'],
-//                 // museumInfo: fish['museum-phrase'],
+//                 catchPhrase: fish['catch-phrase'],
+//                 museumInfo: fish['museum-phrase'],
 //                 image: fish['image_uri'],
-//                 icon: fish['icon_uri']
+//                 icon: fish['icon_uri'],
+//                 capture: 'False'
 //             }
 //             Fish.create(obj)
 //             .then(function(newFish){
@@ -52,10 +48,11 @@ let fishData = [];
 //                 name: bugs['file-name'],
 //                 price: bugs['price'],
 //                 flickPrice: bugs['price-flick'],
-//                 // catchPhrase: bugs['catch-phrase'],
-//                 // museumInfo: bugs['museum-phrase'],
+//                 catchPhrase: bugs['catch-phrase'],
+//                 museumInfo: bugs['museum-phrase'],
 //                 image: bugs['image_uri'],
-//                 icon: bugs['icon_uri']
+//                 icon: bugs['icon_uri'],
+//                 capture: 'False'
 //             }
 //             Bugs.create(obj)
 //             .then(function(newBugs){
@@ -80,10 +77,11 @@ let fishData = [];
 //             const obj = {
 //                 name: seacreatures['file-name'],
 //                 price: seacreatures['price'],
-//                 // catchPhrase: seacreatures['catch-phrase'],
-//                 // museumInfo: seacreatures['museum-phrase'],
+//                 catchPhrase: seacreatures['catch-phrase'],
+//                 museumInfo: seacreatures['museum-phrase'],
 //                 image: seacreatures['image_uri'],
-//                 icon: seacreatures['icon_uri']
+//                 icon: seacreatures['icon_uri'],
+//                 capture: 'False'
 //             }
 //             Seacreatures.create(obj)
 //             .then(function(newSeaCreatures){
@@ -95,3 +93,5 @@ let fishData = [];
 //         }
 //     }
 // });
+
+//sequelize model:create --name UserCapture --attributes capture:boolean,

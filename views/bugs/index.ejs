@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bugs</title>
+    <link rel="stylesheet" href="public/style.css">
 </head>
 <body>
     <h1>BUGS</h1>
     <% for( let i = 0; i < Bugs.length; i++) { %> 
         <% let bugs = Bugs[i]; %>
         <% bugs = bugs.toJSON() %>
-        <p><%= bugs.name %></p>
+        <a href="/bugs/<%= bugs.id %>"><%= bugs.name %></a>
         <img src="<%= bugs.icon %>" />
-        <a href="/bugs/<%= bugs.id %>">More Details</a>
+        <a href="/bugs/edit/<%= bugs.id %>">Captured?</a>
         <hr>
     <% } %>
 </body>

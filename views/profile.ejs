@@ -12,9 +12,9 @@
 
     <h3>Welcome to your PROFILE</h3>
     
-    <!-- <p>Id: <%= id %></p> -->
-    <p>Name: <%= name %></p>
-    <!-- <p>Email: <%= email %></p> -->
+    <p>Id: <%= id %></p>
+    <p><%= name %></p>
+    <p>Email: <%= email %></p>
 
     <div class='fish'>
         <h3>Fish</h3>
@@ -23,7 +23,6 @@
             <% fish = fish.toJSON() %>
             <p><%= fish.name %></p>
             <img src="<%= fish.icon %>" />
-            <a href="/fish/<%= fish.id %>">More Details</a>
             <hr>
         <% } %> 
     </div>
@@ -31,11 +30,10 @@
     <div class='bugs'>
         <h3>Bugs</h3>
         <% for( let i = 0; i < Bugs.length; i++) { %> 
-            <% let bugs = Bugs[i]; %>
-            <% bugs = bugs.toJSON() %>
-            <p><%= bugs.name %></p>
-            <img src="<%= bugs.icon %>" />
-            <a href="/bugs/<%= bugs.id %>">More Details</a>
+            <% let bug = Bugs[i]; %>
+            <% bug = bug.toJSON() %>
+            <p><%= bug.name %></p>
+            <img src="<%= bug.icon %>" />
             <hr>
         <% } %>
     </div>
@@ -43,11 +41,10 @@
     <div class='seaCreatures'>
         <h3>Sea Creatures</h3>
         <% for( let i = 0; i < Seacreatures.length; i++) { %> 
-            <% let seacreatures = Seacreatures[i]; %>
-            <% seacreatures = seacreatures.toJSON() %>
-            <p><%= seacreatures.name %></p>
-            <img src="<%= seacreatures.icon %>" />
-            <a href="/seacreatures/<%= seacreatures.id %>">More Details</a>
+            <% let seacreature = Seacreatures[i]; %>
+            <% seacreature = seacreature.toJSON() %>
+            <p><%= seacreature.name %></p>
+            <img src="<%= seacreature.icon %>" />
             <hr>
         <% } %> 
     </div>

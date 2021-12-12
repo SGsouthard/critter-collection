@@ -16,8 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   Seacreatures.init({
     name: DataTypes.STRING,
     price: DataTypes.INTEGER,
-    catchPhrase: DataTypes.STRING(1000),
-    museumInfo: DataTypes.STRING(1000),
+    catchPhrase: DataTypes.TEXT,
+    museumInfo: DataTypes.TEXT,
     image: DataTypes.STRING,
     icon: DataTypes.STRING,
     capture: DataTypes.BOOLEAN
