@@ -1,7 +1,8 @@
 const axios = require('axios');
+const { text } = require('express');
 const fs = require('fs');
 const { stringify } = require('querystring');
-const { User, Bugs, Fish, Seacreatures } = require('./models');
+const { User, Bugs, Fish, Seacreatures, ProfileFun } = require('./models');
 let fishData = [];
 
 // fs.readFile('fish.json', 'utf8', function (err, data) {
@@ -94,4 +95,15 @@ let fishData = [];
 //     }
 // });
 
-//sequelize model:create --name UserCapture --attributes capture:boolean,
+ProfileFun.create({
+    villager: 'Peanut',
+    fruit: 'Peach',
+    npc: 'Blathers',
+    catchphrase: 'Nya'
+})
+.then(function (newProfileData){
+    console.log('New profile stuff', newProfileData.toJSON())
+})
+.catch(function (error){
+    console.log('error with adding new profile stuff', error)
+})
