@@ -13,7 +13,7 @@
         <% fish = fish.toJSON() %>
         <a href="/fish/<%= fish.id %>"><%= fish.name %></a>
         <img src="<%= fish.icon %>"/>
-
+        <a href="/fish/edit/<%= fish.id %>">Captured?</a>
         <hr>
     <% } %> 
 </body>

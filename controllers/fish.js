@@ -34,4 +34,35 @@ router.get('/:id', function (req, res) {
         })
 })
 
+router.get("/edit/:id", function(req,res){
+    let fishIndex = Number(req.params.id);
+    Fish.findByPk(fishIndex)
+    .then(function (fish){
+        if (fish) {
+            fish = fish.toJSON();
+            res.render('fish/edit', { fish });
+        } else {
+            console.log('This bug is dead');
+            res.render('404', {message: 'This bug does not exist'})
+        }
+    })
+    .catch(function (err) {
+        console.log("ERROR", err)
+    });
+});
+
+router.put('/:id', function(req,res){
+    let fishIndex = Number(req.params.id);
+    Fish.update({
+        capture: !req.body.capture
+    }, { where: { id: fishIndex} })
+    .then(function(response){
+        res.redirect(`/fish/${fishIndex}`);
+    })
+    .catch(function(err){
+        console.log('ERROR', err);
+        res.render('404', {message: "Update failed, try again?"})
+    })
+});
+
 module.exports = router;

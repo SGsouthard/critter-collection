@@ -19,6 +19,23 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/edit/:id", function(req,res){
+    let seacreaturesIndex = Number(req.params.id);
+    Seacreatures.findByPk(seacreaturesIndex)
+    .then(function (seacreatures){
+        if (seacreatures) {
+            seacreatures = seacreatures.toJSON();
+            res.render('seacreatures/edit', { seacreatures });
+        } else {
+            console.log('This bug is dead');
+            res.render('404', {message: 'This bug does not exist'})
+        }
+    })
+    .catch(function (err) {
+        console.log("ERROR", err)
+    });
+});
+
 router.get('/:id', function (req, res) {
     let seacreaturesIndex = Number(req.params.id);
     Seacreatures.findByPk(seacreaturesIndex)
@@ -32,6 +49,20 @@ router.get('/:id', function (req, res) {
             }
         })
 })
+
+router.put('/:id', function(req,res){
+    let seacreaturesIndex = Number(req.params.id);
+    Seacreatures.update({
+        capture: !req.body.capture
+    }, { where: { id: seacreaturesIndex} })
+    .then(function(response){
+        res.redirect(`/seacreatures/${seacreaturesIndex}`);
+    })
+    .catch(function(err){
+        console.log('ERROR', err);
+        res.render('404', {message: "Update failed, try again?"})
+    })
+});
 
 
 module.exports = router;

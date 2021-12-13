@@ -52,10 +52,10 @@ app.get('/profile', isLoggedIn, (req, res) => {
 
 // controllers
 app.use('/auth', require('./controllers/auth'));
-// app.use('/profile', require('./controllers/profile'));
 app.use('/bugs', require('./controllers/bugs'));
 app.use('/fish', require('./controllers/fish'));
 app.use('/seacreatures', require('./controllers/seacreatures'));
+// app.use('/profile', require('./controllers/profile'));
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {

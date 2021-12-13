@@ -7,16 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <h2>Profile Page</h2>
+    <p>Have You Caught <%= fish.name %> Yet?</p>
 
-    <h3>Welcome to your PROFILE</h3>
-    
-    <p>Id: <%= id %></p>
-    <p><%= name %></p>
-    <p>Email: <%= email %></p>
-
-<form action="/"
-
+<form method="POST" action="/fish/<%= fish.id %>/?_method=PUT">
+<input type="submit" value="<%= fish.capture %>">
+</form>
 </body>
 </html>
