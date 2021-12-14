@@ -64,5 +64,21 @@ router.put('/:id', function(req,res){
     })
 });
 
+//Delete Route
+router.delete('/:id', function(req,res){
+    console.log("ID HERE", req.params.id);
+    let seacreaturesIndex = Number(req.params.id);
+    Seacreatures.destroy({ where: { id: seacreaturesIndex } 
+    })
+    .then(function(response){
+        console.log('SEACREATURE DELETED', response);
+        res.redirect('/seacreatures');
+    })
+    .catch(function(error){
+        console.log('ERROR', error);
+        res.render('404', {message: "SEACREATURE was not deleted, try again"});
+    })
+});
+
 
 module.exports = router;

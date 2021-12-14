@@ -1,3 +1,32 @@
 body {
-    background-color: darkgray; 
+    background-image: url("/images/repeat-pattern.jpeg");
+}
+
+img {
+    background-color: darkmagenta;
+    border-radius: 30px;
+}
+
+a:visited {
+
+}
+
+a:hover {
+
+}
+
+a:active {
+
+}
+
+a:link {
+
+}
+
+.box {
+    background-color: #d18c58;
+    margin: 50px;
+    padding: 25px;
+    flex-direction: column;
+    max-width: fit-content;
 }

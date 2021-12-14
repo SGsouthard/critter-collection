@@ -19,5 +19,10 @@
         <a href="/bugs/edit/<%= bugs.id %>">Captured?</a>
         <hr>
     </div>
+        Delete Bug? Once deleted, you will no longer have access to this data!
+        <form action="/bugs/<%= bugs.id %>/?_method=DELETE" method="post">
+            <input type="submit" value="(Are you sure? This is a permanent decision!)">
+        </form>
+    
 </body>
 </html>

@@ -19,5 +19,9 @@
         <p>Caught yet? <%= seacreatures.capture %></p>
         <hr>
     </div>
+    Delete Seacreature? Once deleted, you will no longer have access to this data!
+        <form action="/seacreatures/<%= seacreatures.id %>/?_method=DELETE" method="post">
+            <input type="submit" value="(Are you sure? This is a permanent decision!)">
+        </form>
 </body>
 </html>

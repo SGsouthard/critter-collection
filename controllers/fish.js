@@ -65,4 +65,21 @@ router.put('/:id', function(req,res){
     })
 });
 
+//Delete Route
+router.delete('/:id', function(req,res){
+    console.log("ID HERE", req.params.id);
+    let fishIndex = Number(req.params.id);
+    Fish.destroy({ where: { id: fishIndex } 
+    })
+    .then(function(response){
+        console.log('FISH DELETED', response);
+        res.redirect('/fish');
+    })
+    .catch(function(error){
+        console.log('ERROR', error);
+        res.render('404', {message: "FISH was not deleted, try again"});
+    })
+});
+
+
 module.exports = router;

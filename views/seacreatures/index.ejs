@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1>SEA CREATURES</h1>
+    <div class="box">
     <% for( let i = 0; i < Seacreatures.length; i++) { %> 
         <% let seacreatures = Seacreatures[i]; %>
         <% seacreatures = seacreatures.toJSON() %>
@@ -17,5 +18,6 @@
         <a href="/seacreatures/edit/<%= seacreatures.id %>">Captured?</a>
         <hr>
     <% } %> 
+    </div>
 </body>
 </html>

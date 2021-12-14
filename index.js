@@ -95,15 +95,15 @@ let fishData = [];
 //     }
 // });
 
-ProfileFun.create({
-    villager: 'Peanut',
-    fruit: 'Peach',
-    npc: 'Blathers',
-    catchphrase: 'Nya'
-})
-.then(function (newProfileData){
-    console.log('New profile stuff', newProfileData.toJSON())
-})
-.catch(function (error){
-    console.log('error with adding new profile stuff', error)
-})
+// Bugs.create({
+//     name: 'Decoy',
+//     price: 200,
+//     flickPrice: 500,
+//     catchphrase: 'decoy'
+// })
+// .then(function (newBugData){
+//     console.log('New bug stuff', newBugData.toJSON())
+// })
+// .catch(function (error){
+//     console.log('error with adding new bug stuff', error)
+// })

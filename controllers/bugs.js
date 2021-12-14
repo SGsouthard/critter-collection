@@ -66,5 +66,21 @@ router.put('/:id', function(req,res){
     })
 });
 
+//Delete Route
+router.delete('/:id', function(req,res){
+    console.log("ID HERE", req.params.id);
+    let bugsIndex = Number(req.params.id);
+    Bugs.destroy({ where: { id: bugsIndex } 
+    })
+    .then(function(response){
+        console.log('BUG DELETED', response);
+        res.redirect('/bugs');
+    })
+    .catch(function(error){
+        console.log('ERROR', error);
+        res.render('404', {message: "bug was not deleted, try again"});
+    })
+});
+
 
 module.exports = router;

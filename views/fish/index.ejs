@@ -9,13 +9,16 @@
 </head>
 <body>
     <h1>FISH</h1>
+    
     <% for( let i = 0; i < Fish.length; i++) { %> 
+        <div class="box">
         <% let fish = Fish[i]; %>
         <% fish = fish.toJSON() %>
-        <a href="/fish/<%= fish.id %>"><%= fish.name %></a>
-        <img src="<%= fish.icon %>"/>
-        <a href="/fish/edit/<%= fish.id %>">Captured?</a>
-        <hr>
+            <a href="/fish/<%= fish.id %>"><%= fish.name %></a>
+            <img src="<%= fish.icon %>"/>
+            <a href="/fish/edit/<%= fish.id %>">Captured?</a>
+        </div>
     <% } %> 
+    
 </body>
 </html>

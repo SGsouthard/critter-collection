@@ -20,5 +20,10 @@
         <a href="/fish/edit/<%= fish.id %>">Captured?</a>
         <hr>
     </div>
+
+    Delete Fish? Once deleted, you will no longer have access to this data!
+        <form action="/fish/<%= fish.id %>/?_method=DELETE" method="post">
+            <input type="submit" value="(Are you sure? This is a permanent decision!)">
+        </form>
 </body>
 </html>
