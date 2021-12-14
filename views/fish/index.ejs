@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <div class="box">
     <h1>FISH</h1>
-    
+    </div>
+<div class="all">   
     <% for( let i = 0; i < Fish.length; i++) { %> 
         <div class="box">
         <% let fish = Fish[i]; %>
@@ -19,6 +21,6 @@
             <a href="/fish/edit/<%= fish.id %>">Caught yet? <%= fish.capture %></a>
         </div>
     <% } %> 
-    
+</div>   
 </body>
 </html>

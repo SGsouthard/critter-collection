@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <div class="box">
+    <img src="<%= seacreatures.image %>" />
     <p>Have You Caught <%= seacreatures.name %> Yet?</p>
 
 <form method="POST" action="/seacreatures/<%= seacreatures.id %>/?_method=PUT">
 <input type="submit" value="<%= seacreatures.capture %>">
 </form>
+</div>
 </body>
 </html>

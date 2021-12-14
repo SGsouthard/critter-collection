@@ -12,17 +12,17 @@
     <div class='box'>
         <img src="<%= bugs.image %>" />
         <p><%= bugs.name %></p>
-        <p><%= bugs.price %> Bells</p>
-        <p><%= bugs.flickPrice %> Bells</p>
-        <p><%= bugs.catchPhrase %></p>
-        <p><%= bugs.museumInfo %></p>
-        <a href="/bugs/edit/<%= bugs.id %>">Captured?</a>
-        <hr>
+        <p><span>Regular Price:</span> <%= bugs.price %> Bells</p>
+        <p><span>Flick's Price:</span> <%= bugs.flickPrice %> Bells</p>
+        <p><span>"Catch" Phrase:</span> <%= bugs.catchPhrase %></p>
+        <p><span>Blather's Information:</span> <%= bugs.museumInfo %></p>
+        <a href="/bugs/edit/<%= bugs.id %>">Caught yet? <%= bugs.capture %> </a>
     </div>
+    <div class='box'>
         Delete Bug? Once deleted, you will no longer have access to this data!
         <form action="/bugs/<%= bugs.id %>/?_method=DELETE" method="post">
             <input type="submit" value="(Are you sure? This is a permanent decision!)">
         </form>
-    
+    </div>
 </body>
 </html>

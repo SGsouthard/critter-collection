@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <div class="box">
     <img src="<%= bugs.image %>" />
     <p>Have You Caught <%= bugs.name %> Yet?</p>
 
 <form method="POST" action="/bugs/<%= bugs.id %>/?_method=PUT">
 <input type="submit" value="<%= bugs.capture %>">
 </form>
+</div>
 </body>
 </html>

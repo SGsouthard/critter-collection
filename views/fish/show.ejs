@@ -14,12 +14,12 @@
     <div class='box'>
         <img src="<%= fish.image %>" />
         <p><%= fish.name %></p>
-        <p>Shadow Size: <%= fish.shadowSize %></p>
-        <p>Regular Price: <%= fish.price %> Bells</p>
-        <p> CJ's Price: <%= fish.cjPrice %> Bells</p>
-        <p>"Catch" Phrase: <%= fish.catchPhrase %></p>
-        <p>Blather's Information: <%= fish.museumInfo %></p>
-        <a href="/fish/edit/<%= fish.id %>">Captured?</a>
+        <p><span>Shadow Size:</span> <%= fish.shadowSize %></p>
+        <p><span>Regular Price:</span> <%= fish.price %> Bells</p>
+        <p><span>CJ's Price:</span> <%= fish.cjPrice %> Bells</p>
+        <p><span>"Catch" Phrase:</span> <%= fish.catchPhrase %></p>
+        <p><span>Blather's Information:</span> <%= fish.museumInfo %></p>
+        <a href="/fish/edit/<%= fish.id %>">Caught yet? <%= fish.capture %> </a>
         <hr>
     </div>
 

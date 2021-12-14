@@ -12,16 +12,18 @@
     <div class='box'>
         <img src="<%= seacreatures.image %>" />
         <p><%= seacreatures.name %></p>
-        <p><%= seacreatures.shadowSize %></p>
-        <p><%= seacreatures.price %> Bells</p>
-        <p><%= seacreatures.catchPhrase %></p>
-        <p><%= seacreatures.museumInfo %></p>
-        <p>Caught yet? <%= seacreatures.capture %></p>
+        <p><span>Shadow Size:</span> <%= seacreatures.shadowSize %></p>
+        <p><span>Price:</span> <%= seacreatures.price %> Bells</p>
+        <p><span>"Catch" Phrase:</span> <%= seacreatures.catchPhrase %></p>
+        <p><span>Blather's Information:</span> <%= seacreatures.museumInfo %></p>
+        <a href="/seacreatures/edit/<%= seacreatures.id %>">Caught yet? <%= seacreatures.capture %> </a>
         <hr>
     </div>
+    <div class='box'>
     Delete Seacreature? Once deleted, you will no longer have access to this data!
         <form action="/seacreatures/<%= seacreatures.id %>/?_method=DELETE" method="post">
             <input type="submit" value="(Are you sure? This is a permanent decision!)">
         </form>
+    </div>
 </body>
 </html>
