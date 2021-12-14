@@ -9,14 +9,16 @@
 </head>
 <body>
     <h1>BUGS</h1>
-    <div class="individual-item">
+
     <% for( let i = 0; i < Bugs.length; i++) { %> 
+        <div class="box">
         <% let bugs = Bugs[i]; %>
         <% bugs = bugs.toJSON() %>
         <a href="/bugs/<%= bugs.id %>"><%= bugs.name %></a>
         <img src="<%= bugs.icon %>" />
         <a href="/bugs/edit/<%= bugs.id %>">Caught yet? <%= bugs.capture %> </a>
+        </div>
     <% } %>
-    </div>
+    
 </body>
 </html>
