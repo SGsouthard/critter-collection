@@ -15,7 +15,7 @@
         <% bugs = bugs.toJSON() %>
         <a href="/bugs/<%= bugs.id %>"><%= bugs.name %></a>
         <img src="<%= bugs.icon %>" />
-        <a href="/bugs/edit/<%= bugs.id %>">Captured?</a>
+        <a href="/bugs/edit/<%= bugs.id %>">Caught yet? <%= bugs.capture %> </a>
     <% } %>
     </div>
 </body>

@@ -8,25 +8,31 @@ img {
 }
 
 a:visited {
-
+    color: gray;
 }
 
 a:hover {
-
+    color: ;
 }
 
 a:active {
-
+    color: ;
 }
 
 a:link {
-
+    color: white
 }
 
 .box {
     background-color: #d18c58;
+    border-color: #69361c;
+    border-radius: 15px;
     margin: 50px;
     padding: 25px;
     flex-direction: column;
     max-width: fit-content;
+}
+
+.whole-box {
+    background-color: #d18c58;
 }

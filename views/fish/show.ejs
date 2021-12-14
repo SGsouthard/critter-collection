@@ -8,22 +8,26 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>FISH</h1>
+    <div class='header'>
+        <h1>FISH</h1>
+    </div>
     <div class='box'>
         <img src="<%= fish.image %>" />
         <p><%= fish.name %></p>
-        <p><%= fish.shadowSize %></p>
-        <p><%= fish.price %> Bells</p>
-        <p><%= fish.cjPrice %> Bells</p>
-        <p><%= fish.catchPhrase %></p>
-        <p><%= fish.museumInfo %></p>
+        <p>Shadow Size: <%= fish.shadowSize %></p>
+        <p>Regular Price: <%= fish.price %> Bells</p>
+        <p> CJ's Price: <%= fish.cjPrice %> Bells</p>
+        <p>"Catch" Phrase: <%= fish.catchPhrase %></p>
+        <p>Blather's Information: <%= fish.museumInfo %></p>
         <a href="/fish/edit/<%= fish.id %>">Captured?</a>
         <hr>
     </div>
 
+    <div class='box'>
     Delete Fish? Once deleted, you will no longer have access to this data!
         <form action="/fish/<%= fish.id %>/?_method=DELETE" method="post">
             <input type="submit" value="(Are you sure? This is a permanent decision!)">
         </form>
+    </div>
 </body>
 </html>

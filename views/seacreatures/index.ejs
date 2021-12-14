@@ -15,7 +15,7 @@
         <% seacreatures = seacreatures.toJSON() %>
         <p><%= seacreatures.name %></p>
         <img src="<%= seacreatures.icon %>" />
-        <a href="/seacreatures/edit/<%= seacreatures.id %>">Captured?</a>
+        <a href="/seacreatures/edit/<%= seacreatures.id %>">Caught yet? <%= seacreatures.capture %> </a>
         <hr>
     <% } %> 
     </div>
