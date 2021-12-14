@@ -8,6 +8,8 @@ const { Bugs } = require('../models');
 const { Fish } = require('../models');
 const { Seacreatures } = require('../models');
 
+//page does not work :<
+
 let getCritters = async (userInfo) => {
     let critters = userInfo
     console.log('Before', critters)

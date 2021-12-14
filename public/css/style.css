@@ -7,7 +7,7 @@ img {
     border-radius: 30px;
     align-self: center;
     justify-content: center;
-    width: 50%;
+    width: 60%;
 }
 
 h1 {
@@ -32,13 +32,13 @@ span {
 }
 
 input {
-    background-color: #b02a31;
+    background-color: #146638;
     color: white;
 }
 
 input:hover {
     background-color: white;
-    color: #b02a31;
+    color: #146638;
 }
 
 .welcome {
@@ -87,5 +87,5 @@ input:hover {
 
 .logo {
     
-    width: 75%;
+    width: 60%;
 }

@@ -5,6 +5,7 @@ const { stringify } = require('querystring');
 const { User, Bugs, Fish, Seacreatures, ProfileFun } = require('./models');
 let fishData = [];
 
+////Populate the fish using the fish.json file
 // fs.readFile('fish.json', 'utf8', function (err, data) {
 //     if (err) {
 //         console.log('there was a problem reading the file', err)
@@ -44,44 +45,46 @@ let fishData = [];
 //     }
 // });
 
-fs.readFile('bugs.json', 'utf8', function (err, data) {
-    if (err) {
-        console.log('there was a problem reading the file', err)
-    } else {
-        let bugsData = JSON.parse(data);
-        // console.log(bugsData[1]);
-        //put loop/bugs.create in here to populate the dang thing
-        let emptyArray = [];
-        for (i = 0; i < bugsData.length; i++) {
-            let bugs = bugsData[i]
-            const obj = {
-                name: bugs['file-name'],
-                price: bugs['price'],
-                flickPrice: bugs['price-flick'],
-                catchPhrase: bugs['catch-phrase'],
-                museumInfo: bugs['museum-phrase'],
-                image: bugs['image_uri'],
-                icon: bugs['icon_uri'],
-                capture: 'False',
-                createdAt: new Date(),
-                updatedAt: new Date(),
-            }
-            // Bugs.create(obj)
-            // .then(function(newBugs){
-            //     console.log('BUGS UPLOAD', newBugs.name)
-            // })
-            // .catch(function(error){
-            //     console.log('ERROR', error)
-            // });
-            emptyArray.push(obj);
-        }
-        console.log(emptyArray.slice(0, 20));
-        fs.writeFile('database.txt', emptyArray.toString(), function (err) {
-            console.log('finish');
-        })
-    }
-});
+////Populate the bugs using the bugs.json file
+// fs.readFile('bugs.json', 'utf8', function (err, data) {
+//     if (err) {
+//         console.log('there was a problem reading the file', err)
+//     } else {
+//         let bugsData = JSON.parse(data);
+//         // console.log(bugsData[1]);
+//         //put loop/bugs.create in here to populate the dang thing
+//         let emptyArray = [];
+//         for (i = 0; i < bugsData.length; i++) {
+//             let bugs = bugsData[i]
+//             const obj = {
+//                 name: bugs['file-name'],
+//                 price: bugs['price'],
+//                 flickPrice: bugs['price-flick'],
+//                 catchPhrase: bugs['catch-phrase'],
+//                 museumInfo: bugs['museum-phrase'],
+//                 image: bugs['image_uri'],
+//                 icon: bugs['icon_uri'],
+//                 capture: 'False',
+//                 createdAt: new Date(),
+//                 updatedAt: new Date(),
+//             }
+//             // Bugs.create(obj)
+//             // .then(function(newBugs){
+//             //     console.log('BUGS UPLOAD', newBugs.name)
+//             // })
+//             // .catch(function(error){
+//             //     console.log('ERROR', error)
+//             // });
+//             emptyArray.push(obj);
+//         }
+//         console.log(emptyArray.slice(0, 20));
+//         fs.writeFile('database.txt', emptyArray.toString(), function (err) {
+//             console.log('finish');
+//         })
+//     }
+// });
 
+////Populate the seacreatures using the seacreatures.json file
 // fs.readFile('seacreatures.json', 'utf8', function (err, data) {
 //     if (err) {
 //         console.log('there was a problem reading the file', err)
@@ -110,16 +113,3 @@ fs.readFile('bugs.json', 'utf8', function (err, data) {
 //         }
 //     }
 // });
-
-// Bugs.create({
-//     name: 'Decoy',
-//     price: 200,
-//     flickPrice: 500,
-//     catchphrase: 'decoy'
-// })
-// .then(function (newBugData){
-//     console.log('New bug stuff', newBugData.toJSON())
-// })
-// .catch(function (error){
-//     console.log('error with adding new bug stuff', error)
-// })
